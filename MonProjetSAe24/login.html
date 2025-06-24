@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Espace Privé</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- This style is specific to the error message on this page -->
+    <style>
+        .error-message {
+            color: #D8000C; /* Red color for errors */
+            background-color: #FFD2D2; /* Light red background */
+            border: 1px solid #D8000C;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Accès à l'espace privé</h1>
+    </header>
+
+    <!-- The navigation bar is updated with the team page and the language switcher -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="equipe.html">Notre Équipe</a>
+        <a href="login.php">Accès Privé</a>
+        <!-- The language switcher button, linking to the English login page -->
+        <a href="login_en.php" class="lang-switcher">🇬🇧 English</a>
+    </nav>
+	
+    <!-- This container is crucial for the layout to work correctly -->
+    <div class="main-container">
+        <main>
+            <?php
+                // This PHP block displays the error message if the login fails
+                if (isset($_GET['error']) && $_GET['error'] == 1) {
+                    echo '<p class="error-message">Identifiant ou mot de passe incorrect. Veuillez réessayer.</p>';
+                }
+            ?>
+        
+            <form action="private/portail.php" method="POST">
+                <div>
+                    <label for="username">Identifiant :</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div>
+                    <button type="submit">Se connecter</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <footer>
+        <p class="footer-titre">Cabinet Paramédicale Groupe C</p>
+        <p class="footer-noms">AIT OUARET, DUBOS, EL JAHJOUKI, NUADI</p>
+    </footer>
+
+</body>
+</html>

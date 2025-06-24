@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problèmes Rencontrés - SAé24 PM2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header section of the page -->
+    <header>
+        <h1>Problèmes Rencontrés et Solutions Apportées</h1>
+    </header>
+
+    <!-- Navigation bar, consistent with other pages -->
+    <nav>
+		<a href="index.html">Accueil</a>
+		<a href="equipe.html">Notre Équipe</a>
+		<a href="problemes.html">Problèmes Rencontrés</a>
+		<a href="login.php">Accès Privé</a>
+		<!-- The language switcher button, linking to the English version of this page -->
+		<a href="problemes_en.html" class="lang-switcher">🇬🇧 English</a>
+	</nav>
+
+    <!-- Main content area -->
+    <main>
+        <h2>Les défis du projet SAé24</h2>
+        <p>
+            Tout projet technique comporte son lot de défis. 
+			Cette page documente les principaux obstacles que nous avons rencontrés 
+			et les solutions que nous avons mises en œuvre pour les surmonter.
+        </p>
+
+        <!-- Section for Windows Server issues -->
+        <h3>Conflit de Serveurs DHCP</h3>
+        <p>
+            <strong>Problème :</strong> Au début du projet, 
+			nos postes clients n'obtenaient pas les adresses IP de notre serveur Windows Server, 
+			mais recevaient celles du réseau de la salle de TP.
+        </p>
+        <p>
+            <strong>Solution :</strong> En isolant notre topologie sur un vSwitch dédié dans ESXi 
+			et en utilisant des postes clients connectés physiquement uniquement à notre propre switch, 
+			nous avons créé un environnement réseau isolé où notre serveur DHCP était le seul maître.
+        </p>
+
+        <!-- Section for Intersite Telephony issues -->
+        <h3>Configuration du Trunk SIP pour la Téléphonie Intersites</h3>
+        <p>
+            <strong>Problème :</strong> Les appels téléphoniques entre nos serveurs Asterisk ne passaient pas. 
+			L'analyse des logs (<em>asterisk -rvvv</em>) a montré une erreur d'authentification.
+        </p>
+        <p>
+            <strong>Solution :</strong> Le problème venait d'une incohérence dans les "secrets" (mots de passe) 
+			et les "contexts" définis dans les fichiers <em>sip.conf</em> de chaque serveur. 
+			Après une coordination rigoureuse avec l'autre équipe, les appels ont pu être établis.
+        </p>
+
+        <!-- Section for Project Management issues -->
+        <h3>Gestion du Temps et Dépendances des Tâches</h3>
+        <p>
+            <strong>Problème :</strong> Nous avions sous-estimé le temps nécessaire pour la configuration des services Linux, 
+			ce qui a retardé le début du développement du site web.
+        </p>
+        <p>
+            <strong>Solution :</strong> Nous avons réajusté notre diagramme de Gantt. 
+			Le responsable du site a commencé le développement HTML/CSS en local (avec XAMPP) 
+			sans attendre que le serveur soit 100% prêt. 
+			Cette parallélisation des tâches nous a permis de rattraper le retard.
+        </p>
+    </main>
+	
+	<!-- Footer section with team credits and validation badges -->
+    <footer>
+	    <p>Cabinet Paramédicale Groupe C</p>
+	    <p>AIT OUARET, DUBOS, EL JAHJOUKI, NUADI</p>
+	  
+        <aside id="last">
+            <hr />
+            <p><em>Validation de la page HTML5 - CSS3</em></p>
+            <a href="https://validator.w3.org/" target="_blank"> 
+                <!-- HTML5 validator badge image -->
+                <img class="validator-badge" src="./images/html5-validator-badge-blue.png" alt="HTML5 Valide !" />
+            </a>
+                    
+            <a href="https://jigsaw.w3.org/css-validator/" target="_blank">
+                <!-- CSS validator badge image -->
+                <img class="validator-badge" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" />
+            </a>
+        </aside>
+    </footer>
+  
+</body>
+</html>

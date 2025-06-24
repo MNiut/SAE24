@@ -1,0 +1,258 @@
+/* --- Importing Google Fonts "Lato" --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* --- Definition of main colors (CSS variables) --- */
+:root {
+    --bleu-fonce: #0d2c4e;     /* A deep and elegant midnight blue */
+    --bleu-moyen: #3e6e9f;     /* A more accessible blue for navigation */
+    --beige-tres-clair: #fafafa; /* A very neutral off-white, not yellow */
+    --blanc-pur: #ffffff;
+    --texte-couleur: #333333;
+}
+
+/* --- General style for the page body --- */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--beige-tres-clair); /* The new very light beige */
+    color: var(--texte-couleur);
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--bleu-fonce); /* Dark blue background */
+    color: var(--blanc-pur);             /* White text for contrast */
+    text-align: center;
+    padding: 2em 1em; /* A little more vertical space */
+}
+
+/* The h1 title is now visible because its parent (header) has a dark background */
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* We make it larger for more impact */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    background-color: var(--bleu-moyen); /* The medium blue */
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A soft shadow replaces the line */
+    position: sticky; /* The bar stays at the top of the screen on scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: var(--blanc-pur);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #dddddd; /* Slightly lighter on hover */
+}
+
+/* --- Main Content --- */
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto; /* More space above and below */
+    background-color: var(--blanc-pur); /* Pure white background for maximum readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+/* --- Style for titles in the content --- */
+h2, h3 {
+    color: var(--bleu-fonce);
+    border-bottom: 2px solid var(--bleu-moyen); /* Underlines titles for structure */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--bleu-fonce); /* Dark blue background like the header */
+    color: var(--blanc-pur);
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 40px; /* Space before the footer */
+}
+
+/* --- Horizontal Separator --- */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--bleu-moyen), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+/* --- Style for forms (login.html) --- */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important so that padding does not overflow */
+}
+
+form button {
+    background-color: var(--bleu-moyen);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--bleu-fonce);
+}
+
+/* --- STYLE FOR THE TEAM TABLE --- */
+
+.team-table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    table-layout: fixed; /* This is the key property to control column widths */
+}
+
+.team-table th, .team-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top; /* Aligns text to the top of the cell */
+    word-wrap: break-word; /* Allows long words in the task description to break */
+}
+
+.team-table thead {
+    background-color: var(--bleu-fonce);
+    color: var(--blanc-pur);
+    font-size: 1.1em;
+}
+
+/* Defining column widths */
+.team-table .task-col {
+    width: 60%; /* The main task column takes the most space */
+}
+.team-table .name-col {
+    width: 20%; /* The name column is smaller */
+}
+.team-table .role-col {
+    width: 20%; /* The role column is also smaller */
+}
+
+
+.team-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.team-table tbody tr:hover {
+    background-color: #e8f4f8;
+}
+
+/* Styling for the content of Name and Role cells */
+.team-table td:nth-child(2), 
+.team-table td:nth-child(3) {
+    font-weight: bold;
+    vertical-align: middle; /* We can keep vertical centering for these shorter cells */
+}
+
+/* --- LANGUAGE SWITCHER BUTTON STYLE --- */
+nav {
+    display: flex; /* Enables Flexbox layout */
+    align-items: center; /* Vertically aligns items in the middle */
+}
+
+.lang-switcher {
+    margin-left: auto; /* This is the magic: pushes the button to the far right */
+    background-color: var(--blanc-pur);
+    color: var(--bleu-fonce);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.lang-switcher:hover {
+    background-color: #e9e9e9;
+    color: var(--bleu-fonce);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* --- STYLE FOR VALIDATOR BADGES --- */
+
+.validator-badge {
+    height: 31px; /* The standard height for W3C badges */
+    width: auto;  /* The width will adjust automatically to keep proportions */
+    border: 0;    /* Removes any border the browser might add to linked images */
+    vertical-align: middle; /* Aligns the image nicely with the text line */
+}
+
+
+/* --- STYLE FOR THE DELIVERABLES DASHBOARD --- */
+
+.deliverables-list {
+    list-style: none; /* Removes the default bullet points */
+    padding: 0;
+}
+
+.deliverables-list li {
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--bleu-moyen);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.deliverables-list li strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--bleu-fonce);
+}
+
+.deliverables-list a {
+    color: var(--bleu-moyen);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.deliverables-list a:hover {
+    text-decoration: underline;
+}
+
+.logout-button {
+    display: inline-block;
+    background-color: #D8000C;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
