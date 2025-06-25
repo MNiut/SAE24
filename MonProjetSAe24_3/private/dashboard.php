@@ -87,7 +87,7 @@ if ($lang === 'en') {
                 </li>
                  <li>
                     <strong><?php echo $src_label; ?></strong>
-                    <a href="https://github.com/votre-equipe/sae24-pm2" target="_blank"><?php echo $src_link; ?></a>
+                    <a href="https://github.com/MNiut/SAE24" target="_blank"><?php echo $src_link; ?></a>
                 </li>
                 <li>
                     <strong><?php echo $appendix_label; ?></strong>
