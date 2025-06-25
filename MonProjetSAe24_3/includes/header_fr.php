@@ -1,3 +1,4 @@
+<?php session_start(); // Start the session at the very beginning ?>
 <?php
 // English comments as requested.
 // This file contains the French header and navigation bar.
@@ -20,6 +21,15 @@
         <a href="index.php">Accueil</a>
         <a href="equipe.php">Notre Équipe</a>
         <a href="problemes.php">Problèmes Rencontrés</a>
+
+        <?php // --- Dynamic Patient Area Link ---
+        if (isset($_SESSION['patient_id'])) : ?>
+            <a href="mon_compte.php" style="font-weight: bold;">Mon Compte</a>
+            <a href="private/patient_logout.php">Déconnexion Patient</a>
+        <?php else : ?>
+            <a href="espace_patient.php">Espace Patient</a>
+        <?php endif; ?>
+
         <a href="login.php">Accès Privé</a>
         <!-- The language switcher button, linking to the English version of the current page -->
         <a href="./en/<?php echo $current_page_url; ?>" class="lang-switcher">🇬🇧 English</a>
