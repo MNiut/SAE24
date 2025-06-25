@@ -24,10 +24,10 @@
 
         <?php // --- Dynamic Patient Area Link ---
         if (isset($_SESSION['patient_id'])) : ?>
-            <a href="my_account.php" style="font-weight: bold;">My Account</a>
+            <a href="mon_compte.php" style="font-weight: bold;">My Account</a>
             <a href="../private/patient_logout.php">Patient Logout</a>
         <?php else : ?>
-            <a href="patient_area.php">Patient Area</a>
+            <a href="espace_patient.php">Patient Area</a>
         <?php endif; ?>
 
         <a href="login.php">Private Area</a>
