@@ -81,7 +81,6 @@ if ($lang === 'en') {
                     <strong><?php echo $tech_label; ?></strong>
                     <a href="../livrables/simulation.pkt" target="_blank">Simulation Packet Tracer (.pkt)</a> | 
                     <a href="../livrables/schema_reseau.png" target="_blank">Schéma Réseau (.png)</a> | 
-                    <a href="../livrables/plan_numerotation.pdf" target="_blank">Plan de Numérotation (.pdf)</a> |
 		    <a href="../livrables/plan_adressage.pdf" target="_blank">Plan d'Adressage (.pdf)</a> |
 		    <a href="../livrables/psswd_github.pdf" target="_blank">Mots de Passe et lien GitHub (.pdf)</a> |
                 </li>
@@ -91,7 +90,8 @@ if ($lang === 'en') {
                 </li>
                 <li>
                     <strong><?php echo $appendix_label; ?></strong>
-                    <a href="../livrables/logins.txt" target="_blank"><?php echo $appendix_link; ?></a>
+                    <a href="../livrables/plan_numerotation.pdf" target="_blank">Plan de Numérotation (.pdf)</a> |
+		    <a href="../livrables/psswd_github.pdf" target="_blank">Mots de Passe et lien GitHub (.pdf)</a> |
                 </li>
             </ul>
             <hr>
